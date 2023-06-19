@@ -15,7 +15,8 @@ class DesksController < ApplicationController
         render :new
       end
     end
-    
+  
+
     private
     
     def desk_params
