@@ -1,0 +1,27 @@
+<h1>Stwórz rezerwację</h1>
+
+<%= form_for @reservation do |f| %>
+  <div class="field">
+    <%= f.label :start_time %>
+    <%= f.datetime_select :reservationDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :end_time %>
+    <%= f.datetime_select :useDate %>
+  </div>
+
+  <div class="field">
+    <%= f.label :desk_id %>
+    <%= f.collection_select :desk_id, Desk.all, :number, :number_with_status %>
+  </div>
+
+  <div class="field">
+    <%= f.label :user_id %>
+    <%= f.collection_select :user_id, User.all, :id, :name_with_lastname %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit "Stwórz rezerwację" %>
+  </div>
+<% end %>

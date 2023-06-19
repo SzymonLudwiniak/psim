@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   resources :users, only: [:new, :create]
   resources :desks, only: [:index, :new, :create]
   resources :rooms, only: [:index, :new, :create]
+  resources :reservations, only: [:new, :create]
   # Defines the root path route ("/")
   root "desks#index"
 end
