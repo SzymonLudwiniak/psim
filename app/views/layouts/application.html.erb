@@ -11,7 +11,11 @@
   </head>
 
   <body>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+  
     <%= yield %>
+
     <ul>
       <li>
         <%= link_to "Dodaj użytkownika", new_user_path %><br>

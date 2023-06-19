@@ -1,0 +1,6 @@
+<h1>Lista rezerwacji</h1>
+<ul>
+  <% @reservations.each do |reservation| %>
+    <li><%= reservation.reservationDate %> <%= reservation.useDate %></li>
+  <% end %>
+</ul>
