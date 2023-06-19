@@ -1,17 +1,76 @@
-<%= form_with(model: @desk, url: desks_path) do |f| %>
-  <div class="field">
-    <%= f.label :number %>
-    <%= f.text_field :number %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Awesome Registration Page</title>
+  <style>
+    /* Add your awesome CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="check_box"] {
+      width: 94%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <%= form_with(model: @desk, url: desks_path) do |form| %>
+      <%= form.label :Numer %>
+      <%= form.text_field :number, required: true %>
+      
+      <%= form.label :Pokój %>
+      <%= form.text_field :room_id, required: true %>
+      
+      <div>
+        <%= form.label :Status %>
+        <%= form.check_box :status, required: true %>
+      </div>
+
+      <%= form.submit "Dodaj biurko" %>
+    <% end %>
   </div>
-  <div class="field">
-    <%= f.label :status %>
-    <%= f.check_box :status %>
-  </div>
-  <div class="field">
-    <%= f.label :room_id %>
-    <%= f.text_field :room_id %>
-  </div>
-  <div class="actions">
-    <%= f.submit "Dodaj biurko" %>
-  </div>
-<% end %>
+</body>
+</html>

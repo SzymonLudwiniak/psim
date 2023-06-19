@@ -1,12 +1,75 @@
-<%= form_with(model: @user, url: users_path) do |form| %>
-    <%= form.label :imię %>
-    <%= form.text_field :name %>
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Awesome Registration Page</title>
+  <style>
+    /* Add your awesome CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
     
-    <%= form.label :nazwisko %>
-    <%= form.text_field :last_name %>
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
     
-    <%= form.label :email %>
-    <%= form.email_field :email %>
+    h1 {
+      text-align: center;
+    }
     
-    <%= form.submit "Dodaj użytkownika" %>
-  <% end %>
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="password"],
+    input[type="email"] {
+      width: 94%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <%= form_with(model: @user, url: users_path) do |form| %>
+      <%= form.label :Imię %>
+      <%= form.text_field :name, required: true %>
+      
+      <%= form.label :Nazwisko %>
+      <%= form.text_field :last_name, required: true %>
+      
+      <%= form.label :Mail %>
+      <%= form.email_field :email, required: true %>
+      
+      <%= form.submit "Dodaj użytkownika" %>
+    <% end %>
+  </div>
+</body>
+</html>

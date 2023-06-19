@@ -1,13 +1,72 @@
-<%= form_for @room do |f| %>
-    <div class="field">
-      <%= f.label :name %>
-      <%= f.text_field :name %>
-    </div>
-    <div class="field">
-      <%= f.label :description %>
-      <%= f.text_area :description %>
-    </div>
-    <div class="actions">
-      <%= f.submit "Dodaj pokój" %>
-    </div>
-  <% end %>
+<!DOCTYPE html>
+<html>
+<head>
+  <style>
+    /* Add your awesome CSS styles here */
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f2f2f2;
+    }
+    
+    .container {
+      max-width: 400px;
+      margin: 0 auto;
+      padding: 20px;
+      background-color: #ffffff;
+      border-radius: 5px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    
+    h1 {
+      text-align: center;
+    }
+    
+    label {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: bold;
+    }
+    
+    input[type="text"],
+    input[type="check_box"] {
+      width: 94%;
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid #ccc;
+      margin-bottom: 20px;
+    }
+    
+    button {
+      background-color: #4CAF50;
+      color: #ffffff;
+      border: none;
+      padding: 10px 20px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+    
+    button:hover {
+      background-color: #45a049;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <%= form_for @room do |form| %>
+      <%= form.label :Imie %>
+      <%= form.text_field :name, required: true %>
+      
+      <div>
+        <%= form.label :Opis %>
+        <%= form.text_area :description, required: true %>
+      </div>
+
+      <%= form.submit "Dodaj pokój" %>
+    <% end %>
+  </div>
+</body>
+</html>
