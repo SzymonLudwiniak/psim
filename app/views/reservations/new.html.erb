@@ -1,27 +1,90 @@
-<h1>Stwórz rezerwację</h1>
+<div class="container">
+  <h1>Stwórz rezerwację</h1>
 
-<%= form_for @reservation do |f| %>
-  <div class="field">
-    <%= f.label :start_time %>
-    <%= f.datetime_select :reservationDate %>
-  </div>
+  <%= form_for @reservation do |f| %>
+    <div class="form-field">
+      <%= f.label :start_time, class: "label" %>
+      <%= f.datetime_select :reservationDate, class: "input" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :end_time %>
-    <%= f.datetime_select :useDate %>
-  </div>
+    <div class="form-field">
+      <%= f.label :end_time, class: "label" %>
+      <%= f.datetime_select :useDate, class: "input" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :desk_id %>
-    <%= f.collection_select :desk_id, Desk.all, :id, :number_with_status %>
-  </div>
+    <div class="form-field">
+      <%= f.label :desk_id, class: "label" %>
+      <%= f.collection_select :desk_id, Desk.all, :id, :number_with_status, { prompt: "Select a desk" }, class: "input" %>
+    </div>
 
-  <div class="field">
-    <%= f.label :user_id %>
-    <%= f.collection_select :user_id, User.all, :id, :name_with_lastname %>
-  </div>
+    <div class="form-field">
+      <%= f.label :user_id, class: "label" %>
+      <%= f.collection_select :user_id, User.all, :id, :name_with_lastname, { prompt: "Select a user" }, class: "input" %>
+    </div>
 
-  <div class="actions">
-    <%= f.submit "Stwórz rezerwację" %>
-  </div>
-<% end %>
+    <div class="form-actions">
+      <%= f.submit "Stwórz rezerwację", class: "button" %>
+    </div>
+  <% end %>
+</div>
+
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f2f2f2;
+    margin: 0;
+    padding: 20px;
+  }
+
+  .container {
+    max-width: 400px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+  }
+
+  h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+
+  .form-field {
+    margin-bottom: 20px;
+  }
+
+  .label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+
+  .input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+
+  .form-actions {
+    text-align: center;
+  }
+
+  .button {
+    background-color: #4CAF50;
+    color: #ffffff;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+  .button:hover {
+    background-color: #45a049;
+  }
+</style>
