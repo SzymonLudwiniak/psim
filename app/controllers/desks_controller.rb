@@ -19,7 +19,7 @@ class DesksController < ApplicationController
     private
     
     def desk_params
-      params.require(:desk).permit(:number, :status)
+      params.require(:desk).permit(:number, :status, :room_id)
     end
   end
   
