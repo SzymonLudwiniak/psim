@@ -1,0 +1,7 @@
+<h1>Desks</h1>
+
+<ul>
+  <% @desks.each do |desk| %>
+    <li><%= desk.name %> - <%= desk.room.name %></li>
+  <% end %>
+</ul>

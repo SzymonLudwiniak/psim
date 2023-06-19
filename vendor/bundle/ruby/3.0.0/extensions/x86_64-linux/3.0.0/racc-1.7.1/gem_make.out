@@ -1,0 +1,17 @@
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/racc-1.7.1/ext/racc/cparse
+/home/szymon/.asdf/installs/ruby/3.0.0/bin/ruby -I /home/szymon/.asdf/installs/ruby/3.0.0/lib/ruby/3.0.0 -r ./siteconf20230619-9437-cya14c.rb extconf.rb
+checking for rb_block_call()... yes
+checking for rb_ary_subseq()... yes
+creating Makefile
+
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/racc-1.7.1/ext/racc/cparse
+make "DESTDIR=" clean
+
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/racc-1.7.1/ext/racc/cparse
+make "DESTDIR="
+compiling cparse.c
+linking shared-object racc/cparse.so
+
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/racc-1.7.1/ext/racc/cparse
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20230619-9437-n1csp8/racc

@@ -1,0 +1,15 @@
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+/home/szymon/.asdf/installs/ruby/3.0.0/bin/ruby -I /home/szymon/.asdf/installs/ruby/3.0.0/lib/ruby/3.0.0 -r ./siteconf20230619-9437-qs5v27.rb extconf.rb
+creating Makefile
+
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" clean
+
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR="
+compiling cruby.c
+linking shared-object skiptrace/internal/cruby.so
+
+current directory: /home/szymon/programming/ruby/hot-desk/vendor/bundle/ruby/3.0.0/gems/bindex-0.8.1/ext/skiptrace
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20230619-9437-g1f70j/skiptrace/internal

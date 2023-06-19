@@ -1,0 +1,10 @@
+<%= form_with(model: @desk, url: desks_path, local: true) do |form| %>
+    <%= form.label :nazwa %>
+    <%= form.text_field :nazwa %>
+
+    <%= form.label :opis %>
+    <%= form.text_area :opis %>
+
+    <%= form.submit "Dodaj biurko" %>
+<% end %>
+  

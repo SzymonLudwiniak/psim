@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  reservationDate: 2023-06-19
+  useDate: 2023-06-19
+  user: one
+  desk: one
+
+two:
+  reservationDate: 2023-06-19
+  useDate: 2023-06-19
+  user: two
+  desk: two
