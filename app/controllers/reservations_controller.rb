@@ -1,6 +1,6 @@
 class ReservationsController < ApplicationController
 
-  before_action :authenticate_user!, only: [ :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [ :index, :new, :create]
 
   def index
     @reservations = Reservation.all
