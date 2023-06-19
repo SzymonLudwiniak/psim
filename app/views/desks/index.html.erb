@@ -1,7 +1,16 @@
-<h1>Desks</h1>
-
-<ul>
-  <% @desks.each do |desk| %>
-    <li><%= desk.name %> - <%= desk.room.name %></li>
-  <% end %>
-</ul>
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @desks.each do |desk| %>
+      <tr>
+        <td><%= desk.number %></td>
+        <td><%= desk.status %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>

@@ -13,7 +13,10 @@
   <body>
     <%= yield %>
     <ul>
-      <li><%= link_to "Dodaj użytkownika", new_user_path %></li>
+      <li>
+        <%= link_to "Dodaj użytkownika", new_user_path %><br>
+        <%= link_to "Dodaj biurko", new_desk_path %>
+      </li>
     </ul>
   </body>
 </html>

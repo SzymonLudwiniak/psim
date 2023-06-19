@@ -1,10 +1,13 @@
-<%= form_with(model: @desk, url: desks_path, local: true) do |form| %>
-    <%= form.label :nazwa %>
-    <%= form.text_field :nazwa %>
-
-    <%= form.label :opis %>
-    <%= form.text_area :opis %>
-
-    <%= form.submit "Dodaj biurko" %>
+<%= form_with(model: @desk, url: desks_path) do |f| %>
+  <div class="field">
+    <%= f.label :number %>
+    <%= f.text_field :number %>
+  </div>
+  <div class="field">
+    <%= f.label :status %>
+    <%= f.check_box :status %>
+  </div>
+  <div class="actions">
+    <%= f.submit "Dodaj biurko" %>
+  </div>
 <% end %>
-  
