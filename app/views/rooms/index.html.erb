@@ -1,6 +1,58 @@
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+  li:hover {
+    background-color: #f9f9f9;
+  }
+
+  .room-description {
+    color: #888;
+    margin-top: 5px;
+  }
+
+  .header-separator {
+    margin-bottom: 20px;
+    border-top: 2px solid #ddd;
+  }
+  
+  .button {
+    width: 10%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+  }
+</style>
+
 <h1>Lista pokoi</h1>
+<hr class="header-separator">
+
 <ul>
   <% @rooms.each do |room| %>
-    <li><%= room.name %></li>
+    <li>
+      <strong><%= room.name %></strong>
+      <p class="room-description"><%= room.description %></p>
+    </li>
   <% end %>
 </ul>
+
+
+<a href="<%= new_room_path %>" class="button">Create room</a>

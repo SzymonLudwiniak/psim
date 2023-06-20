@@ -1,6 +1,56 @@
-<h1>Lista rezerwacji</h1>
-<ul>
-  <% @reservations.each do |reservation| %>
-    <li><%= reservation.reservationDate %> <%= reservation.useDate %></li>
-  <% end %>
-</ul>
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .button {
+    width: 10%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+  }
+</style>
+
+<h1>Lista moich rezerwacji</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Desk number</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @reservations.each do |reservation| %>
+      <tr>
+        <td><%= reservation.useDate %></td>
+        <td><%= reservation.desk.number %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+
+<a href="<%= new_reservation_path %>" class="button">Create reservation</a>

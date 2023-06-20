@@ -1,3 +1,38 @@
+<style>
+  table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+
+  th, td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+
+  th {
+    background-color: #f5f5f5;
+    font-weight: bold;
+  }
+
+  tbody tr:hover {
+    background-color: #f9f9f9;
+  }
+  
+  .button {
+    width: 10%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+  }
+</style>
+
 <table>
   <thead>
     <tr>
@@ -14,3 +49,6 @@
     <% end %>
   </tbody>
 </table>
+
+
+<a href="<%= new_desk_path %>" class="button">Create desk</a>

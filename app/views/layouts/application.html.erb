@@ -2,27 +2,75 @@
 <html>
   <head>
     <title>HotDesk</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+    <style>
+      .top-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: #f5f5f5;
+        padding: 10px;
+      }
+
+      .top-bar ul {
+        list-style-type: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+      }
+
+      .top-bar li {
+        margin-right: 10px;
+      }
+
+      .top-bar li:last-child {
+        margin-right: 0;
+      }
+
+      .top-bar a {
+        text-decoration: none;
+        color: #333;
+        padding: 5px;
+      }
+
+      .top-bar .logout-button {
+        margin-left: auto;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 3px;
+        padding: 5px 10px;
+        cursor: pointer;
+      }
+
+      .content {
+        margin-top: 20px;
+      }
+    </style>
   </head>
 
   <body>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-  
-    <%= yield %>
+    <% if user_signed_in? %>
+      <div class="top-bar">
+        <ul>
+          <li><%= link_to "Lista użytkowników", users_path %></li>
+          <li><%= link_to "Lista biurek", desks_path %></li>
+          <li><%= link_to "Lista pokoi", rooms_path %></li>
+          <li><%= link_to "Lista moich rezerwacji", reservations_path %></li>
+        </ul>
+        <%= button_to("Log Out", destroy_user_session_path, method: :delete, class: 'logout-button') %>
+      </div>
+    <% end %>
 
-    <ul>
-      <li>
-        <%= link_to "Dodaj użytkownika", new_user_path %><br>
-        <%= link_to "Dodaj biurko", new_desk_path %><br>
-        <%= link_to "Dodaj pokoik", new_room_path %><br>
-        <%= link_to "Dodaj rezerwacje", new_reservation_path %><br>
-      </li>
-    </ul>
+    <div class="content">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <%= yield %>
+    </div>
   </body>
 </html>

@@ -1,16 +1,67 @@
-<h2>Forgot your password?</h2>
+<style>
+  .forgot-password-form {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
 
-<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  .field {
+    margin-bottom: 10px;
+  }
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  .label {
+    font-weight: bold;
+  }
 
-  <div class="actions">
-    <%= f.submit "Send me reset password instructions" %>
-  </div>
-<% end %>
+  .input-field {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+  }
 
-<%= render "devise/shared/links" %>
+  .actions {
+    text-align: center;
+    margin-top: 20px;
+  }
+
+  .submit-button {
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+  }
+
+  .error-messages {
+    color: red;
+    margin-bottom: 10px;
+  }
+
+  .links {
+    text-align: center;
+    margin-top: 20px;
+  }
+</style>
+
+<div class="forgot-password-form">
+  <h2>Forgot your password?</h2>
+
+  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post, class: 'forgot-password-form' }) do |f| %>
+    <%= render "devise/shared/error_messages", resource: resource %>
+
+    <div class="field">
+      <%= f.label :email %><br>
+      <%= f.email_field :email, autofocus: true, autocomplete: "email", class: 'input-field' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit "Send me reset password instructions", class: 'submit-button' %>
+    </div>
+  <% end %>
+
+  <%= render "devise/shared/links" %>
+</div>

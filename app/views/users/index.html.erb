@@ -1,7 +1,51 @@
+<style>
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  li {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  }
+
+  li:last-child {
+    border-bottom: none;
+  }
+
+  li:hover {
+    background-color: #f9f9f9;
+  }
+
+  .user-details {
+    font-weight: bold;
+    margin-right: 5px;
+  }
+  
+  .button {
+    width: 10%;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    display: block;
+    margin-top: 30px;
+    text-align: center;
+  }
+</style>
+
 <h1>Users</h1>
 
 <ul>
   <% @users.each do |user| %>
-    <li><%= user.name %> <%= user.lastname %> - <%= user.email %></li>
+    <li>
+      <span class="user-details"><%= user.name %> <%= user.lastname %></span> - <%= user.email %>
+    </li>
   <% end %>
 </ul>
+
+
+<a href="<%= new_user_path %>" class="button">Create user</a>
