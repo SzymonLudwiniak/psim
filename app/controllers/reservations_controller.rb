@@ -3,7 +3,7 @@ class ReservationsController < ApplicationController
   before_action :authenticate_user!, only: [ :index, :new, :create]
 
   def index
-    @reservations = Reservation.all
+    @reservations = current_user.reservations
   end
 
   def new
